@@ -6,7 +6,7 @@ before_action :require_is_admin
   end
 
   def index
-    @jobs=Job.all
+    @jobs=Job.all.recent
   end
 
   def new
