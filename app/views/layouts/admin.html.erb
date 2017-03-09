@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Listing
+        </title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+
+        <div class="row">
+            <%=render "common/navbar"  %>
+            <%=render "common/flashes"  %>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 adminsidebar">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a data-toggle="pill" href="/admin/jobs">管理员-职位</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="/jobs">普通用户-职位</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-10">
+                    <%=yield%>
+                </div>
+            </div>
+        </div>
+
+        <%= render "common/footer"%>
+    </body>
+</html>
